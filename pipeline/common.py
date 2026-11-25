@@ -35,6 +35,7 @@ def run_with_retry(
     retries: int = 3,
     backoff_sec: float = 1.5,
     on_retry: Callable[[int, Exception], None] | None = None,
+    should_retry: Callable[[Exception], bool] | None = None,
 ) -> Any:
     last_err: Exception | None = None
     for attempt in range(1, retries + 1):
@@ -43,11 +44,51 @@ def run_with_retry(
         except Exception as exc:
             last_err = exc
             if attempt < retries:
+                if should_retry is not None and not should_retry(exc):
+                    raise
                 if on_retry:
                     on_retry(attempt, exc)
                 time.sleep(backoff_sec * attempt)
     assert last_err is not None
     raise last_err
+
+
+def run_logged_generation(
+    fn: Callable[[], Any],
+    entry: Dict[str, Any],
+    retries: int = 3,
+    should_retry: Callable[[Exception], bool] | None = None,
+) -> Any:
+    attempt = 0
+
+    def _run_attempt() -> Any:
+        nonlocal attempt
+        attempt += 1
+        start = time.perf_counter()
+        try:
+            result = fn()
+        except Exception as exc:
+            log_run({
+                **entry,
+                "attempt": attempt,
+                "latency_sec": round(time.perf_counter() - start, 3),
+                "success": False,
+                "error": type(exc).__name__,
+            })
+            raise
+        log_run({
+            **entry,
+            "attempt": attempt,
+            "latency_sec": round(time.perf_counter() - start, 3),
+            "success": True,
+        })
+        return result
+
+    return run_with_retry(
+        _run_attempt,
+        retries=retries,
+        should_retry=should_retry,
+    )
 
 
 def is_mock_mode() -> bool:

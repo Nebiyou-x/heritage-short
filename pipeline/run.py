@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from pipeline.common import ensure_dirs
+from pipeline.common import ensure_dirs, is_mock_mode
 from pipeline.validate import validate_storyboard
 from pipeline.stages.keyframes import run_keyframes_stage
 from pipeline.stages.shots import run_shots_stage
@@ -13,6 +13,11 @@ from pipeline.stages.assemble import run_assemble_stage
 def main() -> None:
     load_dotenv()
     ensure_dirs()
+    if not is_mock_mode():
+        raise RuntimeError(
+            "The complete production pipeline is not connected yet. "
+            "Run keyframe or narration provider stages individually with pipeline.run_stage."
+        )
     sb_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("storyboard.json")
     sc_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("schema/storyboard.schema.json")
 
