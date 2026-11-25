@@ -4,3 +4,4 @@ __pycache__/
 outputs/final_*.mp4
 outputs/temp_*
 .venv/
+.DS_Store
