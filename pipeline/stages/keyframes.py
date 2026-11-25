@@ -16,7 +16,7 @@ from pipeline.providers import (
 
 
 def _write_placeholder_png(path: Path, label: str) -> None:
-    # Minimal valid 1x1 PNG bytes so downstream FFmpeg assembly works even in mock mode
+    # Minimal valid PNG fixture used only by the mock keyframe stage.
     png_1x1 = (
         b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01"
         b"\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc```\x00\x00\x00\x04\x00\x01"

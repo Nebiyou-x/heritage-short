@@ -8,6 +8,7 @@ from pipeline.common import (
     is_mock_mode,
     run_logged_generation,
 )
+from pipeline.media import probe_media
 from pipeline.providers import (
     GEMINI_TTS_MODEL,
     generate_gemini_speech,
@@ -89,6 +90,18 @@ def run_narration_stage(storyboard: Dict[str, Any]) -> Dict[str, str]:
                 should_retry=is_retryable_provider_error,
             )
             out_path.write_bytes(audio)
+        if provider == "gemini":
+            metadata = probe_media(out_path)
+            try:
+                audio_duration = float(metadata["format"]["duration"])
+            except (KeyError, TypeError, ValueError) as exc:
+                raise ValueError(f"Generated narration has no valid duration: {out_path}") from exc
+            shot_duration = float(shot["duration_sec"])
+            if audio_duration > shot_duration + 0.25:
+                raise ValueError(
+                    f"Narration for {shot['shot_id']} is {audio_duration:.2f}s, "
+                    f"longer than its {shot_duration:.2f}s shot; extend the shot or shorten the line"
+                )
         results[shot["shot_id"]] = str(out_path)
 
     return results

@@ -9,6 +9,7 @@ from typing import Any, Callable, Dict
 ROOT_DIR = Path(__file__).resolve().parent.parent
 OUTPUTS_DIR = ROOT_DIR / "outputs"
 RUNS_LOG_PATH = ROOT_DIR / "runs.jsonl"
+END_CARD_DURATION_SEC = 4
 
 
 def ensure_dirs() -> None:

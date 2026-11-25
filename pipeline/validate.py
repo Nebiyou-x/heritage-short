@@ -2,15 +2,20 @@ import json
 import sys
 from pathlib import Path
 from jsonschema import Draft202012Validator
+from pipeline.common import END_CARD_DURATION_SEC
 
 
 def _validate_timeline(storyboard: dict) -> None:
     errors = []
     shots = storyboard["shots"]
     total_duration = sum(float(shot["duration_sec"]) for shot in shots)
+    final_duration = total_duration + END_CARD_DURATION_SEC
 
-    if not 60 <= total_duration <= 90:
-        errors.append(f"shots: total duration is {total_duration:g}s; expected 60-90s")
+    if not 60 <= final_duration <= 90:
+        errors.append(
+            f"shots: total duration including the {END_CARD_DURATION_SEC}s AI end card "
+            f"is {final_duration:g}s; expected 60-90s"
+        )
 
     for label, items, id_key in (
         ("shots", shots, "shot_id"),

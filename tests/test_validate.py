@@ -32,6 +32,13 @@ class ValidateStoryboardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "total duration"):
             self.validate_copy(storyboard)
 
+    def test_end_card_counts_toward_ninety_second_limit(self):
+        storyboard = copy.deepcopy(self.storyboard)
+        for shot in storyboard["shots"]:
+            shot["duration_sec"] = 11
+        with self.assertRaisesRegex(ValueError, "including the 4s AI end card"):
+            self.validate_copy(storyboard)
+
     def test_rejects_duplicate_shot_ids(self):
         storyboard = copy.deepcopy(self.storyboard)
         storyboard["shots"][1]["shot_id"] = storyboard["shots"][0]["shot_id"]

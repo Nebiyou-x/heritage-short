@@ -18,7 +18,7 @@ def is_retryable_provider_error(exc: Exception) -> bool:
 
 def _required_env(name: str) -> str:
     value = os.getenv(name, "").strip()
-    if not value:
+    if not value or value.lower().startswith("your_"):
         raise RuntimeError(f"Missing required environment variable: {name}")
     return value
 
