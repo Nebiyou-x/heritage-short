@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HeritageShortStoryboard",
+  "type": "object",
+  "required": [
+    "project_title",
+    "language",
+    "aspect_ratios",
+    "style_block",
+    "character_ref",
+    "music_cues",
+    "shots"
+  ],
+  "properties": {
+    "project_title": { "type": "string", "minLength": 1 },
+    "language": { "type": "string", "minLength": 2 },
+    "aspect_ratios": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "enum": ["16:9", "9:16"] }
+    },
+    "style_block": { "type": "string", "minLength": 5 },
+    "character_ref": {
+      "type": "object",
+      "required": ["id", "description", "seed"],
+      "properties": {
+        "id": { "type": "string" },
+        "description": { "type": "string" },
+        "seed": { "type": "integer" }
+      }
+    },
+    "music_cues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "start_sec", "end_sec", "caption", "tempo_bpm", "seed"],
+        "properties": {
+          "id": { "type": "string" },
+          "start_sec": { "type": "number", "minimum": 0 },
+          "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+          "caption": { "type": "string" },
+          "tempo_bpm": { "type": "integer", "minimum": 40, "maximum": 220 },
+          "seed": { "type": "integer" }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_id",
+          "duration_sec",
+          "reason",
+          "image_prompt",
+          "motion_prompt",
+          "narration_am",
+          "subtitle_en",
+          "seed"
+        ],
+        "properties": {
+          "shot_id": { "type": "string" },
+          "duration_sec": { "type": "number", "minimum": 3, "maximum": 15 },
+          "reason": { "type": "string" },
+          "image_prompt": { "type": "string" },
+          "motion_prompt": { "type": "string" },
+          "narration_am": { "type": "string" },
+          "subtitle_en": { "type": "string" },
+          "seed": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "project_title": "የአጎቴ የመጀመሪያ ኮምፒውተር (My Uncle's First Computer)",
+  "total_duration_sec": 69.0,
+  "exports": {
+    "16:9": "/Users/macbook/Desktop/heritage-short/outputs/film_16x9_46162e4fec1d3fa4.mp4",
+    "9:16": "/Users/macbook/Desktop/heritage-short/outputs/film_9x16_46162e4fec1d3fa4.mp4"
+  },
+  "subtitles": "/Users/macbook/Desktop/heritage-short/outputs/subtitles_46162e4fec1d3fa4.srt",
+  "end_card": "Made with AI — Heritage Short Pipeline",
+  "ducking_settings": {
+    "threshold": 0.02,
+    "ratio": 6,
+    "attack_ms": 300,
+    "release_ms": 1500
+  },
+  "loudness_target_lufs": -14.0,
+  "true_peak_db": -1.0
+}

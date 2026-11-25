@@ -1,0 +1,1 @@
+{'stage': 'music', 'cue_id': 'cue_main_comedy', 'caption': 'Playful light Ethiopian krar and marimba underscore, bouncy gentle rhythm, warm acoustic texture, instrumental only', 'tempo_bpm': 108, 'duration_sec': 70, 'seed': 7701}

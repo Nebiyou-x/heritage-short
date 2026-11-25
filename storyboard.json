@@ -1,0 +1,103 @@
+{
+  "project_title": "የአጎቴ የመጀመሪያ ኮምፒውተር (My Uncle's First Computer)",
+  "language": "am",
+  "aspect_ratios": ["16:9", "9:16"],
+  "style_block": "Warm expressive stylized comedy illustration, golden morning sunlight in an Addis Ababa living room, clean lines, rich color palette, centered main subject",
+  "character_ref": {
+    "id": "uncle_tadesse",
+    "description": "Middle-aged Ethiopian man with a neat salt-and-pepper beard, round glasses, cream sweater, dramatic expressive eyebrows",
+    "seed": 1042
+  },
+  "music_cues": [
+    {
+      "id": "cue_main_comedy",
+      "start_sec": 0,
+      "end_sec": 70,
+      "caption": "Playful light Ethiopian krar and marimba underscore, bouncy gentle rhythm, warm acoustic texture, instrumental only",
+      "tempo_bpm": 108,
+      "seed": 7701
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot_01",
+      "duration_sec": 8,
+      "reason": "Establish the setting, Uncle Tadesse, and the comedic premise of his new computer.",
+      "image_prompt": "Wide shot of Uncle Tadesse sitting proudly in front of a bulky desktop monitor on a wooden table, hands on hips like a general.",
+      "motion_prompt": "Slow gentle camera push-in, warm curtain sways slightly in breeze.",
+      "narration_am": "አጎቴ ታደሰ ኮምፒውተር የገዛ ቀን፣ በሰፈራችን ትልቅ ባለሀብት የሆነ መሰለው።",
+      "subtitle_en": "The day Uncle Tadesse bought a computer, he acted like the biggest tycoon in the neighborhood.",
+      "seed": 2001
+    },
+    {
+      "shot_id": "shot_02",
+      "duration_sec": 8,
+      "reason": "Show the first physical comedy gag: treating the computer mouse like soap.",
+      "image_prompt": "Medium close-up of Uncle Tadesse rubbing a computer mouse back and forth on the desk as if scrubbing clothes with soap, squinting intently.",
+      "motion_prompt": "Subtle hand movement rubbing the mouse, camera stays steady.",
+      "narration_am": "ማውሱን እንደ ሳሙና ጠረጴዛው ላይ እያሸ፣ «ለምን አረፋ አያወጣም?» ብሎ ተገረመ።",
+      "subtitle_en": "Rubbing the mouse on the table like soap, he wondered why it wasn't making suds.",
+      "seed": 2002
+    },
+    {
+      "shot_id": "shot_03",
+      "duration_sec": 9,
+      "reason": "Escalate the joke with loud Amharic command shouts at a login screen.",
+      "image_prompt": "Medium shot of Uncle Tadesse leaning close to the glowing monitor with an exaggerated stern face, pointing a finger at the screen.",
+      "motion_prompt": "Gentle zoom on his expressive face as screen light flickers softly.",
+      "narration_am": "ፓስወርድ ሲጠይቀው፣ «እኔ ታደሰ ነኝ! ክፈት በል አሁኑኑ!» ብሎ በቁጣ አዘዘው።",
+      "subtitle_en": "When it asked for a password, he commanded it sternly: 'I am Tadesse! Open right now!'",
+      "seed": 2003
+    },
+    {
+      "shot_id": "shot_04",
+      "duration_sec": 8,
+      "reason": "Introduce a visual mishap: accidentally rotating the display upside down.",
+      "image_prompt": "Medium shot of Uncle Tadesse tilting his head completely upside down to read a flipped upside-down computer screen, confused expression.",
+      "motion_prompt": "Slow camera pan slightly to the left, monitor glow reflects on his glasses.",
+      "narration_am": "ስክሪኑ ሲገለበጥበት፣ ኪቦርዱን ከመጠየቅ ይልቅ አንገቱን ወደ ኋላ ገልብጦ ማንበብ ጀመረ።",
+      "subtitle_en": "When the screen flipped upside down, instead of checking the keyboard, he tilted his head back to read.",
+      "seed": 2004
+    },
+    {
+      "shot_id": "shot_05",
+      "duration_sec": 9,
+      "reason": "Bring in a second character (the niece) to create contrast and comedic timing.",
+      "image_prompt": "Medium shot of a ten-year-old Ethiopian girl in a school cardigan standing beside Uncle Tadesse with hands on her waist, amused expression.",
+      "motion_prompt": "Gentle push-in toward the girl as she sighs lightly.",
+      "narration_am": "አስር ዓመት የሆናት የእህቱ ልጅ መጥታ፣ «አጎት፣ ኮምፒውተሩን አላስቆጣኸውም» አለችው።",
+      "subtitle_en": "His ten-year-old niece walked in and said, 'Uncle, you didn't make the computer angry.'",
+      "seed": 2005
+    },
+    {
+      "shot_id": "shot_06",
+      "duration_sec": 8,
+      "reason": "Show the quick, effortless fix that deflates Uncle Tadesse's dramatic buildup.",
+      "image_prompt": "Close-up of small hands pressing keys on a keyboard while the monitor screen snaps upright cleanly.",
+      "motion_prompt": "Quick crisp snap of the screen returning upright, camera static.",
+      "narration_am": "በሦስት ሰከንድ ውስጥ ሁለት ቁልፍ ነካችና ስክሪኑ ወደ ቦታው ተመለሰ።",
+      "subtitle_en": "In three seconds she pressed two keys, and the screen snapped right back.",
+      "seed": 2006
+    },
+    {
+      "shot_id": "shot_07",
+      "duration_sec": 9,
+      "reason": "Deliver the punchline where Uncle Tadesse claims credit for the fix.",
+      "image_prompt": "Medium shot of Uncle Tadesse sitting back with a smug grin and crossed arms as if he planned the whole thing.",
+      "motion_prompt": "Slow gentle pull-back, warm light settles over the room.",
+      "narration_am": "አጎቴም ፈገግ ብሎ፣ «እኔም ላደርገው ነበር፣ ልሞክራት ብዬ ነው የገለበጥኩት» አለ።",
+      "subtitle_en": "Uncle grinned and said, 'I was about to do that—I only flipped it to test it.'",
+      "seed": 2007
+    },
+    {
+      "shot_id": "shot_08",
+      "duration_sec": 10,
+      "reason": "Close on a warm family takeaway and comedic tag.",
+      "image_prompt": "Warm wide shot of Uncle Tadesse and his niece laughing together by the sunny window with the computer humming quietly.",
+      "motion_prompt": "Slow gentle Ken Burns zoom out, dust motes float in sunlight.",
+      "narration_am": "ቴክኖሎጂ ቢቀየርም፣ የአጎቴ ታደሰ በራስ መተማመን ግን ፈጽሞ አይቀየርም።",
+      "subtitle_en": "Technology may change, but Uncle Tadesse's self-confidence never changes.",
+      "seed": 2008
+    }
+  ]
+}
