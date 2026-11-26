@@ -1,8 +1,9 @@
 # Failures and limitations
 
 This document distinguishes implementation limits from failures observed during
-testing. No live model-provider requests have been made from this development
-session, so provider-specific production failures are not yet characterized.
+testing. The supplied project reflection and current-workspace `runs.jsonl`
+record live Cloudflare and Gemini failures; further provider failure modes may
+still occur.
 
 ## Current functional limits
 
@@ -36,9 +37,10 @@ session, so provider-specific production failures are not yet characterized.
 for plumbing tests. It deliberately does not create fake MP4 exports. These
 placeholders are not valid generated assets and must not be submitted as a film.
 
-The committed `runs.jsonl` is a historical mock log with paths from a different
-machine. Its zero-cost entries do not represent provider pricing or current
-outputs. Do not interpret it as a production audit record.
+Some early entries in the committed `runs.jsonl` are historical mock records
+with paths from a different machine. Their zero-cost entries do not represent
+provider pricing or current outputs. Later records include live provider calls,
+but the file is still not a complete production audit record.
 
 ## Runtime and provider risks
 
@@ -69,6 +71,32 @@ provider request/response behavior, retry logging, music-source checks, and
 assembly-cache behavior. A short local FFmpeg render has been verified at both
 target resolutions using synthetic placeholder inputs. It does not validate
 live API access or the final Amharic film.
+
+## Observed production blockers and response
+
+The project reflection dated November 26, 2026 records these real provider
+blockers:
+
+- **Cloudflare authorization (HTTP 401):** The token was active, but lacked
+  permission for the account-level Workers AI endpoint. The account ID and
+  token scope were checked, and the token permissions were changed to include
+  the endpoint permission required by the model request.
+- **Cloudflare request contract (HTTP 400):** The FLUX.1 Schnell endpoint
+  rejected the `seed` parameter. The unsupported field was removed from the
+  provider payload and the caller/tests were updated. The storyboard seed
+  remains available for local cache/provenance; it is not sent as a model
+  parameter.
+- **Gemini quota/rate limit (HTTP 429):** Narration requests were rejected
+  after keyframes and shot renders had completed. Successful cached outputs
+  were preserved. Missing narration was retried later when requests succeeded;
+  the run log shows five failed HTTP attempts and eight successful TTS outputs.
+  The available evidence does not distinguish exhausted quota from temporary
+  rate limiting, so operators should check the provider console before retrying.
+
+The response was to inspect provider error details, narrow the request to the
+failing stage, correct the authorization or payload issue, and preserve cached
+work. This history is based on the reflection and run records; it is distinct
+from the retry behavior implemented in the code.
 
 ## Failure response
 

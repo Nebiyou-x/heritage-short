@@ -90,11 +90,21 @@ licensing details, and provider billing limits:
 make film
 ```
 
+For production, `make film` is the single command that runs the complete
+pipeline. Setup commands above are prerequisites, not additional production
+commands.
+
 `make film` forces the Cloudflare and Gemini providers and turns mock mode off.
 It generates any uncached keyframes and narration, creates motion shots for
 both aspect ratios, mixes the audio, and writes verified MP4s beneath `outputs/`.
 Provider generation is billable and sends the corresponding prompts or
 narration text to those providers. Cache hits reuse existing assets.
+
+The cost of a production run is not currently measurable from this repository:
+provider billing usage is not recorded, retries may add billable requests, and
+the current run log has no provider GPU-minute data. Local FFmpeg work has no
+provider fee. Check provider dashboards for actual charges; do not treat missing
+cost data as a $0 run.
 
 Provider stages can also be run individually:
 
@@ -141,8 +151,10 @@ python -m unittest discover -s tests -v
 The tests cover storyboard checks, provider request/response parsing with
 mocked HTTP responses, stage logging, mock export behavior, and local track
 handling. A short local FFmpeg integration render has also been checked in both
-aspect ratios. No live Cloudflare or Gemini requests have been made from this
-development session.
+aspect ratios. Live Cloudflare keyframe and Gemini TTS requests have been made;
+the run log records successful calls as well as provider errors. Their costs
+are unknown because billing usage is not integrated. No audience evaluation,
+fluent-speaker approval, or final human quality review is documented yet.
 
 Before delivery, watch and listen to both complete exports. Verify Amharic
 pronunciation, subtitle meaning/timing, image composition in each crop, music

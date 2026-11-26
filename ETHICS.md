@@ -9,6 +9,10 @@ distribution territory and channel.
 The sample characters—Uncle Tadesse and his niece—are fictional. The current
 storyboard is not intended to depict or identify a real person, and Gemini TTS
 uses a configured provider voice rather than cloning a family member's voice.
+The supplied project reflection confirms that no real person was intended to
+be shown or voiced. No individual consent record applies to the fictional
+sample; generated outputs should still be reviewed for unintended recognizable
+likenesses before release.
 
 If a later version uses a real person's image, likeness, personal story, or
 voice:
@@ -48,7 +52,18 @@ details, but future authors should:
 
 The project owner must verify the current terms and output-use rights for each
 provider/model and any local assets. The pipeline does not perform legal or
-copyright review.
+copyright review. The repository does not yet record a verified license/terms
+statement for each generated model and output:
+
+| Asset/model | Current evidence | Rights status |
+|---|---|---|
+| Cloudflare-hosted `@cf/black-forest-labs/flux-1-schnell` keyframes | Model name and provider are recorded in the architecture and run log. | Applicable model and output terms have not been recorded here; verify the terms in effect for the account and generation date. |
+| Google Gemini `gemini-3.8-flash-tts` narration | Model name is recorded in the architecture and run log. | Applicable service and output terms have not been recorded here; verify the terms in effect for the account and generation date. |
+| Music in the current production manifest | The manifest declares “ACE-Step 1.5 open-weight output,” while the run log identifies the staged source file as `mixkit-game-show-suspense-waiting-667.wav`. | Provenance and license are unresolved. The declaration alone is not evidence that the file is ACE-Step-generated or that it is licensed for the intended use. Verify the source and retain its applicable license before publication. |
+| FFmpeg-rendered video, subtitles, and end card | Produced locally from the storyboard and generated/staged inputs. | No separate output license has been documented; rights depend on all included inputs and applicable provider terms. |
+
+Do not treat “open-weight output” or a license name entered in `.env` or the
+manifest as proof of the source model, ownership, or publication rights.
 
 The production soundtrack must be a track the user has permission to use for
 the intended distribution, including any needed synchronization, adaptation,

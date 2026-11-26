@@ -129,8 +129,10 @@ model-call entry because no model request occurred.
 
 FFmpeg stages are local and are logged separately. Mock generation records
 zero cost because no provider service was called. The committed historical
-`runs.jsonl` contains mock runs from another machine and is not a production
-cost or reproducibility record.
+`runs.jsonl` begins with mock records whose output paths refer to another
+machine; later records include live provider calls from this workspace. The
+live entries still do not provide billable usage, so the log is not a complete
+production cost or reproducibility record.
 
 ## Configuration and security
 

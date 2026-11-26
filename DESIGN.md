@@ -80,3 +80,18 @@ The current storyboard totals 69 seconds; the end card brings each export to
 but cannot judge story clarity, cultural accuracy, pronunciation, visual
 continuity, licensing, or platform suitability. Those remain human approval
 checks before publication.
+
+## Audience-test record
+
+The intended audience and creative intent above are design decisions, not
+evidence of audience response. As of the supplied project reflection dated
+November 26, 2026, neither a radio-cut test nor a near-final-cut test has been
+completed. There are no participant counts, audience comments, or changes
+attributable to viewer feedback to report. Do not describe planned reviewers or
+hypothetical feedback as completed tests.
+
+Before claiming audience validation, record each session separately: date,
+cut/version shown, audience relationship to the intended audience, number of
+participants, consent to collect feedback, representative comments, and the
+specific edit made (or why no edit was made). Keep participant identities
+private unless they explicitly agree to be named.
