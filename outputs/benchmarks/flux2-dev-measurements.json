@@ -1,0 +1,111 @@
+{
+  "timestamp_utc": "2026-11-26T18:56:02.086352+00:00",
+  "provider": "Cloudflare Workers AI",
+  "model": "@cf/black-forest-labs/flux-2-dev",
+  "requests": 8,
+  "request_retries": 0,
+  "resolution": "1024x1024",
+  "steps": 25,
+  "results": [
+    {
+      "shot_id": "shot_01",
+      "latency_sec": 13.548,
+      "seed": 2001,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 541628,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_02",
+      "latency_sec": 11.795,
+      "seed": 2002,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 557795,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_03",
+      "latency_sec": 12.445,
+      "seed": 2003,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 573206,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_04",
+      "latency_sec": 11.414,
+      "seed": 2004,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 581438,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_05",
+      "latency_sec": 11.244,
+      "seed": 2005,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 587520,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_06",
+      "latency_sec": 10.553,
+      "seed": 2006,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 641161,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_07",
+      "latency_sec": 13.488,
+      "seed": 2007,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 591082,
+      "timing_metadata": {}
+    },
+    {
+      "shot_id": "shot_08",
+      "latency_sec": 20.464,
+      "seed": 2008,
+      "steps": 25,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 558696,
+      "timing_metadata": {}
+    }
+  ],
+  "mean_latency_sec": 13.119,
+  "median_latency_sec": 12.12,
+  "total_latency_sec": 104.951,
+  "output_dir": "outputs/benchmarks/flux2-dev",
+  "comparison": {
+    "baseline_model": "@cf/black-forest-labs/flux-1-schnell",
+    "baseline_requests": 8,
+    "baseline_total_latency_sec": 30.999,
+    "baseline_mean_latency_sec": 3.875,
+    "baseline_median_latency_sec": 1.965,
+    "baseline_steps": 4,
+    "baseline_seed_sent": false,
+    "same_storyboard_prompts": true,
+    "both_output_dimensions": "1024x1024",
+    "comparator_list_price_estimate_usd": 0.328,
+    "baseline_list_price_estimate_usd": 0.0050688,
+    "gpu_minutes": null,
+    "provider_gpu_timing_metadata": "not returned in parsed top-level timings/meta fields"
+  },
+  "contact_sheet": "outputs/benchmarks/flux2-dev-comparison.jpg"
+}
