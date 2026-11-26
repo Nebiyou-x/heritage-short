@@ -39,13 +39,13 @@ class ProviderTests(unittest.TestCase):
             "result": {"image": base64.b64encode(jpeg).decode("ascii")},
         })
 
-        result = generate_cloudflare_image("warm room", 17)
+        result = generate_cloudflare_image("warm room")
 
         self.assertEqual(result, jpeg)
         args, kwargs = post.call_args
         self.assertIn(CLOUDFLARE_IMAGE_MODEL, args[0])
         self.assertEqual(kwargs["headers"]["Authorization"], "Bearer token")
-        self.assertEqual(kwargs["json"], {"prompt": "warm room", "seed": 17, "steps": 4})
+        self.assertEqual(kwargs["json"], {"prompt": "warm room", "steps": 4})
 
     @patch.dict(os.environ, {
         "CLOUDFLARE_ACCOUNT_ID": "account",
@@ -55,7 +55,7 @@ class ProviderTests(unittest.TestCase):
     def test_cloudflare_rejects_non_image_payload(self, post):
         post.return_value = FakeResponse({"success": True, "result": {"image": "bm90LWpwZWc="}})
         with self.assertRaisesRegex(ValueError, "not JPEG"):
-            generate_cloudflare_image("prompt", 1)
+            generate_cloudflare_image("prompt")
 
     @patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"})
     @patch("pipeline.providers.requests.post")

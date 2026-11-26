@@ -1,0 +1,22 @@
+{
+  "project_title": "የአጎቴ የመጀመሪያ ኮምፒውተር (My Uncle's First Computer)",
+  "story_duration_sec": 69.0,
+  "end_card_duration_sec": 4,
+  "total_duration_sec": 73.0,
+  "exports": {
+    "16:9": "/workspaces/heritage-short/outputs/film_16x9_22a08ca838c79f4a.mp4",
+    "9:16": "/workspaces/heritage-short/outputs/film_9x16_22a08ca838c79f4a.mp4"
+  },
+  "subtitles": "/workspaces/heritage-short/outputs/subtitles_22a08ca838c79f4a.srt",
+  "end_card": "Made with AI — Heritage Short Pipeline",
+  "music_license": "ACE-Step 1.5 open-weight output",
+  "music_attribution": null,
+  "ducking_settings": {
+    "threshold": 0.02,
+    "ratio": 6,
+    "attack_ms": 300,
+    "release_ms": 1500
+  },
+  "loudness_target_lufs": -14.0,
+  "true_peak_db": -1.0
+}

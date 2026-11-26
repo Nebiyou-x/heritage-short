@@ -23,7 +23,7 @@ def _required_env(name: str) -> str:
     return value
 
 
-def generate_cloudflare_image(prompt: str, seed: int) -> bytes:
+def generate_cloudflare_image(prompt: str) -> bytes:
     account_id = _required_env("CLOUDFLARE_ACCOUNT_ID")
     token = _required_env("CLOUDFLARE_API_TOKEN")
     url = (
@@ -33,7 +33,7 @@ def generate_cloudflare_image(prompt: str, seed: int) -> bytes:
     response = requests.post(
         url,
         headers={"Authorization": f"Bearer {token}"},
-        json={"prompt": prompt, "seed": seed, "steps": 4},
+        json={"prompt": prompt, "steps": 4},
         timeout=120,
     )
     response.raise_for_status()

@@ -85,7 +85,7 @@ def run_keyframes_stage(storyboard: Dict[str, Any]) -> Dict[str, str]:
             run_logged_generation(_generate_mock, entry)
         else:
             image = run_logged_generation(
-                lambda: generate_cloudflare_image(prompt, shot["seed"]),
+                lambda: generate_cloudflare_image(prompt),
                 entry,
                 should_retry=is_retryable_provider_error,
             )
